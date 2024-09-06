@@ -1,0 +1,248 @@
+body{
+    font-family: arial;
+    margin-bottom: 150px;
+}
+
+/*header--------------------------------------------------------------*/
+.header{
+    background-color: rgb(0,25,82);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    top: 20px;
+}
+
+.header .left-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 120px;
+}
+
+.left-header img{
+    width: 60px;
+}
+
+.logo-button{
+    background: none;
+    border: none;
+}
+
+.nameshop-button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.header hr{
+    height: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.left-header p{
+    color: white;
+    font-size: 25px;
+}
+
+.right-header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex:1;
+    margin-right: 120px;
+}
+
+.right-header input{
+    padding-left: 10px;
+    height: 31px;
+    padding-right: 10px;
+    border: none;
+    max-width: 600px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 20px;
+}
+
+.right-header input:focus{
+    outline: none; /*kh hien thi vien*/
+    font-size: 17px;
+    color: rgb(0,25,82);
+}
+
+.search-button img{
+    height: 30px;
+}
+
+.search-button{
+    background-color: rgb(0,25,82);
+    border: 1px solid white;
+    height: 33px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0px;
+}
+
+/*main-content------------------------------------------------------*/
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    color: red;
+}
+
+
+.content0{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+.name{
+    display: flex;
+    flex:2;
+}
+
+.name p{
+    margin-left: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.content0>p{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.part1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.part1 .left{
+    display: flex;
+}
+
+.left p{
+    margin-left: 5px;
+}
+
+.part2{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.part2 img{
+    height: 150px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.content1 hr{
+    height: 0;
+    margin: 0;
+    border: 1px solid rgb(201, 201, 201);
+}
+
+
+/*footer--------------------------------------------------------------------------*/
+.footer{
+    display: grid;
+    grid-template-columns:  1fr 500px 500px 1fr;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+    height: 100px;
+    background-color: white;
+}
+
+.pay-button{
+    justify-self: end;
+    align-self: center;
+}
+
+
+.footer p{
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+.quaylai-button{
+    justify-self: start;
+    align-self: center;
+    text-decoration: none;
+    background-color: lightpink;
+    font-size: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 86px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.quaylai-button:hover{
+    border: 2px solid white;
+    background-color: white;
+    border: 3px solid lightpink;
+}
+
+.pay-button a{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgb(0,25,82);
+    color: white;
+    max-width: 86px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    
+    align-self: center;
+    display: inline-block;
+}
+
+.pay-button a:hover{
+    background-color: white;
+    border: 3px solid rgb(0,25,82);
+    color: rgb(0,25,82);
+}

@@ -1,0 +1,1 @@
+export let pets = JSON.parse(sessionStorage.getItem('pet'));

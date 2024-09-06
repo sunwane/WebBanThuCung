@@ -1,0 +1,120 @@
+.footer{
+    background-color: rgb(0,25,82);
+    color: white;
+    bottom: 0px;
+    left: 0;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.info-contact{
+    width: 400px;
+}
+
+.info-contact img{
+    height: 30px;
+    margin-right: 5px;
+}
+
+.title-contact{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.footer hr{
+    width: 100px;
+    margin: 0;
+    margin-top: 5px;
+    height: 2px;
+    border: none;
+    background-color: white;
+}
+
+.shop-address{
+    margin-top: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 17px;
+}
+
+.farm-address{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+.policy{
+    width: 300px;
+}
+
+
+.title-policy{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.policy button{
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 17.5px;
+}
+
+.security{
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.hotline{
+    margin-top: 30px;
+    border: 2px solid white;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 160px;
+    padding-left: 10px;
+    border-radius: 50px;
+}
+.policy a{
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    
+}
+
+.ship-pay{
+    text-align: start;
+}
+
+.info-social img{
+    height: 35px;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+.icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.title-social{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+
+
