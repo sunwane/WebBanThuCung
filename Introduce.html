@@ -137,8 +137,13 @@
     </div>
 
     <script>
+        let cart = JSON.parse(localStorage.getItem('cart'));
         let quantity = JSON.parse(localStorage.getItem('quantity'));
+        if(!cart){
+            quantity = 0;
+        }
         document.getElementById('quantity_cart').innerHTML = quantity;
+        console.log(quantity);
     </script>
 </body>
 </html>
