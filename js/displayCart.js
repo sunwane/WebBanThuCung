@@ -3,7 +3,6 @@ import {cart, addToCart, removeFromCart, formartMoney} from './cart.js'
 let cartHTML ='';
 
 
-
 function updateSum(){
     let sum = 0;
     if(cart){
@@ -63,8 +62,6 @@ document.querySelectorAll('.js-delete-link').forEach((link) => { //mã hóa nút
         
     });
 });
-
-
 
 
 function deleteAll(){

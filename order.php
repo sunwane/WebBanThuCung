@@ -31,7 +31,7 @@
             while($row = mysqli_fetch_array($result)){
                 if($row['SoDienThoai'] == $phone){
                     $check = false; //khach hang su dung sdt nay da tung mua hang
-                    $idCus = $row['MaKhachHang'];
+                    //$idCus = $row['MaKhachHang'];
                 }
             }
         }

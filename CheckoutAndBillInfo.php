@@ -50,7 +50,7 @@
                 }
             }
             else{
-                echo "<script>console.log('std nay da duoc dung de mua 1 lan')</script>";
+                //echo "<script>console.log('std nay da duoc dung de mua 1 lan')</script>";
                 $idCus = getIDCus($conn, $phone);
                 updateCus($idCus, $name, $phone, $address1, $email, $conn);
                 inforOrder($idDH, $idCus, $pttt, $ngayDat, $ngayGiao, $note, $sum, $trangthai, $conn);
