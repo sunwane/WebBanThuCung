@@ -1,0 +1,140 @@
+/* css của account.html */
+
+body {
+    background: transparent;
+    margin: 20px;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+.box1{
+    width: calc(100vw - 40px);
+    background-color: white;
+    border-radius: 10px;
+}
+.name{
+    background-color: #004CE1;
+    color: white;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 20px;
+    padding-left: 5vw;
+    display: flex;
+}
+.name>img{
+    width: 16%;
+    height: fit-content;
+}
+.nametext{
+    padding-top: 3%;
+}
+.nametext>div{
+    padding-left: 0.75vw;
+    font-size: 2vw;
+}
+.nametext>.uname{
+    font-weight: bold;
+    padding-left: 2.5vw;
+    font-size: 4.5vw;
+}
+.form{
+    margin: 10px;
+    padding-left: 4vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+    margin-top: 20px;
+    padding-bottom: 5px;
+}
+.form-group{
+    display: flex;
+    align-items: center;
+    padding-bottom: 7px;
+}
+label{
+    min-width: 19%;
+    font-size: 2vw;
+}
+input{
+    padding-left: 10px;
+    width: 65%;
+    height: 40px;
+}
+#pass{
+    width: 55%;
+}
+button{
+    width: 9%;
+    margin: 1%;
+    font-size: 1.5vw;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.show{
+    margin-right: 0%;
+}
+.bottom{ 
+    display: inline;
+    align-items: center;
+}
+.box2{
+    margin-top: 5px;
+    float: inline-start;
+    background-color: #353535;
+    color: #FFED8C;
+    padding: 3vw;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    font-size: 20px;
+    text-align: center;
+}
+.box3{
+    margin-top: 5px;
+    float: inline-end;
+    text-align: center;
+    background-color: #D2D2D2;
+    padding: 20px;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+}
+.box3:hover{
+    background-color: #192743;
+    color: white;
+    font-weight: bold;
+}
+.box3>img{
+    width: 30%;;
+}
+.box3>div{
+    margin-top: 0;
+}
+input{
+    border-radius: 5px;
+    background-color: #d9d9d9;
+    border: none;
+    color:#353535;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 2vw;
+    padding-left: 2vw;
+}
+button{
+    border-radius: 5px;
+    background-color:gold;
+    border: none;
+    box-shadow: 3px 3px#192743;
+}
+button:hover{
+    box-shadow: 5px 5px #004CE1;
+}
+.error {
+    padding-left: 20%;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-size: 17px;
+    color: rgb(207, 0, 0);
+}

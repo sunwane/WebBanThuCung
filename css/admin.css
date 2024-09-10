@@ -1,0 +1,93 @@
+/* css của home.html */
+
+body {
+    background: transparent;
+    margin: 0;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+.box1{
+    margin: 20px;
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+h2{
+    margin: 0px;
+    padding-top: 10px;
+    padding-left: 3px;
+}
+
+.new{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.new>a{
+    flex: 1 1 70px;
+    color:white;
+    padding: 1vw;
+    margin: 1vw;
+    border-radius: 8px;
+    box-shadow: 10px 10px 4px rgb(26, 26, 26);
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.donhangmoi{
+    background-color: #2C8800;
+}
+.khachhang{
+    background-color: #E83354;
+}
+.daxuli{
+    background-color: #4C85F3;
+}
+.danggiao{
+    background-color: #e2931c;
+}
+.tieude{
+    font-size: 1.6vw;
+    font-weight: bold;
+}
+.soluong{
+    font-size: 1.2vw;
+    color: #eaeaea;
+    font-weight: lighter;
+    padding-bottom: 10px;
+}
+.lastupdate{
+    font-size: 0.9vw;
+    color: #eaeaea;
+}
+
+.new>a:hover{
+    padding-top: 1.5vw;
+    padding-bottom: 0.5vw;
+    box-shadow: 10px 20px 5px rgb(0, 0, 180);
+}
+
+.new>a:visited{
+    text-decoration: none;
+}
+
+hr{
+    max-width: 300px;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+
+@media (max-width: 600px) {
+    hr{
+        margin-left: -2px;
+        margin-right: -2px;
+    }
+}
+
+iframe[name=content]{
+    width: 100%;
+}
