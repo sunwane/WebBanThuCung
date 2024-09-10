@@ -22,8 +22,8 @@
 
         <div class="right">
             <a class="intro-button" href="Introduce.html">Giới thiệu</a>
-            <a class="news" href="news.html">Chuyên mục về chó mèo</a>
-            <!--<select>
+            <!--<a class="news" href="news.html">Chuyên mục về chó mèo</a>
+            <select>
                 <option value="" disabled selected hidden>Chuyên mục về chó mèo</option>
                 <option value="us">Chuyên mục về chó</option>
                 <option value="vn">Chuyên mục về mèo</option>

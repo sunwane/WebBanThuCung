@@ -18,12 +18,12 @@
 
         <div class="right">
             <a class="intro-button" href="Introduce.html">Giới thiệu</a>
-            <a class="news" href="">Chuyên mục về chó mèo</a>    
+            <!--<a class="news" href="">Chuyên mục về chó mèo</a>-->
             <div class="cart">
                 <a class="cart-button" href="Cart.html">
                     <img src="images/icon/shopping-cart.png">
                 </a>
-                <p>2</p>
+                <p id="quantity_cart">0</p>
             </div>        
         </div>
     </div>
@@ -135,5 +135,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let quantity = JSON.parse(localStorage.getItem('quantity'));
+        document.getElementById('quantity_cart').innerHTML = quantity;
+    </script>
 </body>
 </html>
