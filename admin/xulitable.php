@@ -22,7 +22,7 @@ function displayCount2($conn, $searchQuery, $searchType, $searchText) {
                 WHERE TenSanPham LIKE '%".$searchText."%'
             )";
     } else {
-        $sql = "SELECT COUNT(*) AS count FROM DonHang $searchQuery";
+        $sql = "SELECT COUNT(*) AS count FROM DonHang JOIN KhachHang ON DonHang.MaKhachHang = KhachHang.MaKhachHang $searchQuery";
     }
     $result = $conn->query($sql);
     //num_rows trả về số dòng từ $result
@@ -44,11 +44,12 @@ function displayCount3($conn, $tabName, $searchType, $searchText) {
                 WHERE TenSanPham LIKE '%".$searchText."%'
             )";
     } else if (!empty($searchType) && !empty(($searchText))){
-        $sql = "SELECT COUNT(*) AS count FROM DonHang 
+        $sql = "SELECT COUNT(*) AS count FROM DonHang Join KhachHang ON DonHang.MaKhachHang = KhachHang.MaKhachHang 
                 WHERE DonHang.TrangThai='$tabName' 
                 AND $searchType LIKE '%$searchText%' ";
     } else {
-        $sql = "SELECT COUNT(*) AS count FROM DonHang WHERE DonHang.TrangThai='$tabName'";
+        $sql = "SELECT COUNT(*) AS count FROM DonHang JOIN KhachHang ON DonHang.MaKhachHang = KhachHang.MaKhachHang 
+        WHERE DonHang.TrangThai='$tabName'";
     }
     $result = $conn->query($sql);
     //num_rows trả về số dòng từ $result
