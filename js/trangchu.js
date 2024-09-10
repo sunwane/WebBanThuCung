@@ -1,17 +1,12 @@
 import {updateQuantity, formartMoney} from './cart.js'
 import {pets} from './pets.js'
-import { search } from './dog.js';
 
 //localStorage.removeItem('quantity');
 //localStorage.removeItem('cart');
 
 updateQuantity();
 
-let products = document.querySelector('.products');
-
-search();
-
-/*let petHTML = '';
+let petHTML = '';
 
 let searchInput = document.querySelector('.search input');
 let div = document.querySelector('.products');
@@ -66,4 +61,4 @@ document.addEventListener('click', (event) => {
     if (!searchInput.contains(event.target) && !div.contains(event.target)) {
         div.style.display = 'none';
     }
-});*/
+});
