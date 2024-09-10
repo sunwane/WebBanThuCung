@@ -1,3 +1,6 @@
+// sessionStorage.setItem('idarray','');
+// sessionStorage.setItem('pdarray', '')
+
 function closePopup() {
     var overlays = document.querySelectorAll('#overlay')
     overlays.forEach(function(overlay){
@@ -8,15 +11,19 @@ function closePopup() {
         popup.style.display = 'none';
     });
     var edits = document.querySelector('.edit')
-    edits.forEach(function(edit){
-        edit.style.display = 'none';
-    });
-    // var table = document.querySelector('#productTable');
-    // table.style.display = 'none';
-    // var rows = table.querySelectorAll('tbody tr');
-    // for (var i = 0; i < rows.length; i++) {
-    //     rows[i].remove();
-    // }
+    edits.style.display = 'none';
+    
+    // var datalist = document.querySelector('#productList');
+
+    // var idarray = sessionStorage.getItem('idarray').split(' ');
+    // idarray.forEach(function(id) {
+    //     var option = datalist.querySelector('option[value="' + id + '"]');
+    //     datalist.removeChild(option);
+    // });
+    // sessionStorage.setItem('idarray','');
+    // sessionStorage.setItem('pdarray','');
+
+
     var adds = document.querySelector('.add')
     adds.forEach(function(add){
         add.style.display = 'none';
@@ -30,7 +37,7 @@ function closePopup() {
         select.selectedIndex = 0;
     })
 }
-function openPopup(button, table, id='') {
+function openPopup(button, table) {
     document.getElementById('overlay').style.display = '';
     document.querySelector('.popup').style.display = '';
     var type = button.innerText;
@@ -127,38 +134,62 @@ function openPopup(button, table, id='') {
         document.querySelector('.add').style.display = 'none';
 
         var tr = button.parentElement.parentElement;
-        var cells = tr.querySelectorAll('td');
+        var cells = tr.querySelectorAll('td');  
 
-        var table2 = tr.nextElementSibling.querySelector('tbody'); //xác định phần thân của bảng con chứa sản phẩm
-        var allproduct = table2.querySelectorAll('tr'); //lấy tất cả các hàng
+        var table2 = tr.nextElementSibling.querySelector('tbody');
+        var allproduct = table2.querySelectorAll('tr');
 
         var form = document.querySelectorAll('form');
         var editform = form[2];
 
-        var table = editform.querySelector('#productTable'); //table chứa giỏ hàng
+        var table = editform.querySelector('#productTable');
         table.style.display = '';
         var tbody = table.querySelector('tbody');
-        while (tbody.firstChild) { //xóa hết tất cả con của tbody trong giỏ hàng
+        while (tbody.firstChild) {
             tbody.removeChild(tbody.firstChild);
         }
-
+        // var addedProductIds = '';
+        // var addedProduct = '';
         allproduct.forEach(function (product) {
             var pcells = product.querySelectorAll('td');
+        
+            // var datalist = document.querySelector('#productList');
+            // var option = document.createElement('option');
+        
+            var productName = pcells[1].textContent.trim();
+            // var id = productName.slice(-4);
+        
+            // option.value = id;
+            // option.textContent = productName + ' _ ' + pcells[2].textContent.trim();
+        
+            // datalist.appendChild(option);
+            // if(addedProductIds == ''){
+            //     addedProductIds = id;
+            // } else {
+            //     addedProductIds = addedProductIds + ' ' + id;
+            // }
 
-            var productName = pcells[1].textContent; // Tên Sản Phẩm
-            var productPrice = parseInt(pcells[2].textContent); // Giá Sản Phẩm
-
-            // Tạo hàng mới cho bảng sản phẩm động trong popup
+            // if(addedProduct == ''){
+            //     addedProduct = productName + ' _ ' + pcells[2].textContent.trim();
+            // } else {
+            //     addedProduct = addedProduct + ',' + productName + ' _ ' + pcells[2].textContent.trim();;
+            // }
+        
+            var productPrice = parseInt(pcells[2].textContent.trim());
+        
             var newRow = document.createElement('tr');
             newRow.innerHTML = `
                 <td><input type="text" name="name[]" value="${productName}" hidden>${productName}</td>
                 <td style="text-align:right;"><input type="number" name="price[]" value="${productPrice}" hidden>${productPrice}</td>
                 <td style="text-align:center;"><button id="deletebutton" type="button" onclick="removeProduct(this)">Xóa</button></td>
             `;
-
+        
             tbody.appendChild(newRow);
-
         });
+        // alert(addedProductIds);
+        // alert(addedProduct);
+        // sessionStorage.setItem('idarray',addedProductIds);
+        // sessionStorage.setItem('pdarray',addedProduct);
         
         editform.querySelector('input[name="id"]').value = cells[0].textContent;
         editform.querySelector('select[name="optionKH"]').value = 'Khách hàng cũ';
