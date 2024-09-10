@@ -1,0 +1,471 @@
+/* css chung của các table */
+body {
+  background: transparent;
+  margin: 0;
+  font-family: "Segoe UI", Arial, Tahoma, Verdana, sans-serif;
+  overflow: hidden;
+}
+.tab{
+  margin: 10px 10px;
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  margin-bottom: 0px;
+  background: transparent;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* ẩn scrollbar IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  width: 98vw;
+}
+/* Ẩn scrollbar for Chrome, Safari and Opera */
+.tab::-webkit-scrollbar {
+  display: none;
+}
+.tablink{
+  border: none;
+  margin: 10px 20px;
+  width: 20%;
+  max-width: 300px;
+  min-width: 150px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: darkblue;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-family: Verdana, Tahoma, sans-serif;
+}
+.active{
+  color: white;
+  background-color: #373737;
+}
+.tablink:hover{
+  color: white;
+  background-color: #373737;
+}
+.main {
+  margin: 0px 10px;
+  padding: 10px;
+  padding-bottom: 10px;
+  height: 83vh;
+  background-color: white;
+}
+table,
+th,
+td {
+  border: 1px solid gainsboro;
+  border-collapse: collapse;
+  border-top: none;
+  border-right: none;
+  box-sizing: border-box;
+}
+table {
+  width: 100%;
+  overflow-x: auto;
+  background-color: white;
+  border-spacing: 0;
+}
+.tble {
+  height: 62vh;
+  overflow-y: scroll;
+  position: relative;
+  border: 1px solid black;
+  margin-top: 0px;
+}
+thead th {
+  min-height: 50px;
+  position: sticky;
+  padding: 20px 5px;
+  font-size: 14px;
+  z-index: 2;
+  color: white;
+  top: 0;
+  background-color: #f8f9fa;
+  text-transform: uppercase;
+  padding-left: 10px;
+  border-left: none;
+}
+th {
+  text-align: left;
+  padding-left: 20px;
+}
+.tfoot {
+  border-bottom: none;
+  background-color: black;
+  padding: 10px 0px;
+  text-align: right;
+}
+#addbtn {
+  background-color: white;
+  font-weight: bold;
+  color: darkgreen;
+  margin: 0 20px;
+  height: 30px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+#addbtn:disabled {
+  background-color: rgb(181, 191, 200);
+  color: rgb(219, 217, 217);
+}
+#addbtn:disabled:hover {
+  background-color: rgb(181, 191, 200);
+  color: rgb(219, 217, 217);
+}
+#addbtn:hover {
+  background-color: limegreen;
+  color: white;
+}
+#resetbtn{
+  background-color: white;
+  color: blue;
+  height: 30px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+}
+#resetbtn>a{
+  text-decoration: none;
+}
+#resetbtn>a:visited{
+  color: blue;
+}
+#resetbtn:hover, #resetbtn>a:hover{
+  background-color: dodgerblue;
+  color: white;
+}
+td.action {
+  display: flex;
+  position: sticky;
+  z-index: 1;
+  right: 0;
+  background-color: #ececec;
+  align-items: center;
+  width: calc(100%-10px);
+  justify-content: center;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+th.action {
+  right: 0;
+  z-index: 3;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  padding-left: 0;
+}
+.action > a {
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+.action > a:hover,
+.action > button:hover {
+  background-color: cadetblue;
+}
+#details {
+  background-color: blue;
+  color: white;
+  width: 60px;
+}
+#editbtn {
+  background-color: gold;
+  color: black;
+}
+#deletebtn {
+  background-color: red;
+  color: white;
+}
+#nextbtn {
+  background-color: darkgreen;
+  color: white;
+}
+#deletebutton {
+  border: none;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: red;
+  color: white;
+}
+#detailsbtn {
+  background-color: blue;
+  color: white;
+}
+tr {
+  background-color: #ececec;
+}
+#searchtext {
+  border-radius: 10px;
+  width: 50%;
+  max-width: 220px;
+  font-size: 15px;
+  padding: 5px 10px;
+  border: 1px solid gray;
+}
+#searchbtn {
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  background-color: gainsboro;
+}
+#searchbtn:hover {
+  background-color: blue;
+  color: white;
+}
+.hienthi {
+  padding-left: 70px;
+  color: darkred;
+}
+.search-type {
+  width: 60%;
+  max-width: 200px;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 5px;
+  color: gray;
+}
+.search {
+  padding: 10px 10px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0px;
+}
+.tags {
+  width: 50%;
+  text-align: left;
+}
+.timkiem {
+  width: 50%;
+  text-align: right;
+}
+td {
+  padding: 10px;
+}
+#mainA {
+  margin: 20px 10px;
+  height: 90vh;
+}
+#mainA > .tble {
+  height: 70vh;
+}
+.tkqt > thead > tr > th {
+  background-color: darkgreen;
+}
+.khachhang > thead > tr > th {
+  background-color: crimson;
+}
+.giong > thead > tr > th {
+  background-color: darkblue;
+}
+.pets > thead > tr > th {
+  background-color: rgb(110, 0, 73);
+}
+.donhang > thead > tr > th {
+  background-color: rgb(198, 82, 0);
+}
+.details > thead >tr > th{
+  background-color: rgb(107, 62, 0);
+  font-size: 15px;
+  z-index: 0;
+  padding: 10px;
+}
+.details{
+  z-index: -1;
+}
+.child tr{ 
+  margin: 0px;
+  background-color: ghostwhite;
+}
+.child-row > td{
+  padding: 0px;
+}
+
+.popup {
+  width: 440px;
+  padding-bottom: 20px;
+  position: fixed;
+  overflow: hidden;
+  max-height: 70vh;
+  z-index: 5;
+  background-color: white;
+  left: calc(100% - 500px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+.popup-head {
+  position: relative;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10px;
+}
+.popup-content {
+  overflow-y: auto;
+  max-height: calc(70vh - 60px);
+}
+#close {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 2px 7px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: -5px;
+}
+.popup-head > span {
+  text-align: center;
+  font-weight: bold;
+  padding-left: 10%;
+  width: 100%;
+  text-transform: uppercase;
+}
+.popup-content > form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 25px;
+  margin-top: 0px;
+}
+.khachhangmoi, .khachhangcu{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+.form-group > label, .khachhangmoi > label, .khachhangcu > label {
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+.form-group > input, .khachhangmoi > input, .khachhangcu > input {
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding-left: 10px;
+}
+.form-group > textarea{
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 5px;
+}
+#productSearch{
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#addproduct{
+  padding: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid gray;
+  border-top: none;
+  background-color: green;
+  color: white;
+}
+#addproduct:hover{
+  padding: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid gray;
+  border-top: none;
+  background-color: yellowgreen;
+  color: white;
+}
+#productTable{
+  margin-top: 10px;
+}
+#productTable > thead > tr > th{
+  background-color: blue;
+  color: white;
+  font-size: 10px;
+  padding: 10px;
+}
+#tong{
+  margin-top: 10px;
+  text-align: right;
+}
+input[type="file"] {
+  padding-top: 10px;
+  border-radius: 4px;
+  color: black;
+}
+.form-group > select {
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding-left: 5px;
+  font-size: 14px;
+  color: gray;
+}
+input:disabled {
+  background-color: gainsboro;
+  color: gray;
+  border: none;
+}
+input:read-only {
+  background-color: gainsboro;
+  color: gray;
+  border: none;
+}
+#submit {
+  padding: 10px;
+  margin: 10px 25px;
+  background-color: rgb(18, 83, 148);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+#submit:hover {
+  background-color: cadetblue;
+}
+.error {
+  padding-left: 5px;
+  margin-top: 2px;
+  font-size: 14px;
+  color: rgb(207, 0, 0);
+}
+.alert {
+  background-color: white;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  position: fixed;
+  padding: 20px 30px;
+  text-align: center;
+}
+.alert > .message{
+  color: black;
+  text-align: justify;
+}
+.alert>button{
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 8px 30px;
+  font-size: 15px;
+}
+.alert>button:hover{
+  background-color: darkblue;
+}
