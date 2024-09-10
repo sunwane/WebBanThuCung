@@ -198,7 +198,7 @@
             <button class="ship-pay">
                 <a href="">Chính sách vận chuyển và thanh toán</a>
             </button>
-            <p class="hotline">Hot line: 0954865324</p>
+            <p class="hotline">Hotline: 0954865324</p>
         </div>
 
         <div class="info-social">
