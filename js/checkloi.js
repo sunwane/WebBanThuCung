@@ -793,18 +793,42 @@ function addProduct(button) {
     var parent = button.parentElement;
     var productInput = parent.querySelector('#productSearch');
     var product = productInput.value;
+    // if(sessionStorage.getItem('idarray') != ''){
+    //     var idarray = sessionStorage.getItem('idarray').split(' ');
+    //     var pdarray = sessionStorage.getItem('pdarray').split(',');
+    //     if (!checkValidOption(productInput,'#productList') && !idarray.includes(product)) {
+    //         button.parentElement.querySelector('.error').innerText = 'Vui lòng chọn 1 sản phẩm từ datalist';
+    //         return;
+    //     }
+    // } else {
+        if (!checkValidOption(productInput,'#productList')) {
+            button.parentElement.querySelector('.error').innerText = 'Vui lòng chọn 1 sản phẩm từ datalist';
+            return;
+        }
+    // }
 
-    if (!checkValidOption(productInput,'#productList')) {
-        button.parentElement.querySelector('.error').innerText = 'Vui lòng chọn 1 sản phẩm từ datalist';
-        return;
-    }
-
-    //tìm option tương ứng để tách value tên và giá
+    // Tìm option tương ứng để tách giá trị tên và giá
     var datalist = parent.querySelector('#productList');
     var options = datalist.querySelectorAll('option');
     var productName = '';
     var productPrice = '';
 
+    //Thêm các tùy chọn vào datalist
+    // var count = 0;
+    // if (idarray.length != 0) {
+    //     idarray.forEach(function(id) {
+    //         var newOption = document.createElement('option');
+    //         newOption.value = id;
+    //         newOption.textContent = pdarray[count]; // Tên sản phẩm và giá
+    //         newOption.style.display = 'none';
+
+    //         datalist.appendChild(newOption);
+    //         count++;
+    //     });
+    // }
+
+    // Kiểm tra các tùy chọn
+    
     for (var i = 0; i < options.length; i++) {
         var option = options[i];
         if (option.value === product) {
@@ -816,7 +840,8 @@ function addProduct(button) {
         }
     }
 
-    if (isDuplicate(productName)){
+
+    if (isDuplicate(parent, productName)){
         button.parentElement.querySelector('.error').innerText = 'Sản phẩm này đã được chọn!';
         return;
     }
@@ -847,16 +872,14 @@ function addProduct(button) {
     productInput.value = '';
 }
 
-function isDuplicate(value) {
-    var table = document.getElementById('productTable');
+function isDuplicate(parent, value) {
+    var table = parent.querySelector('#productTable');
     var rows = table.querySelectorAll('tbody tr');
 
     for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].getElementsByTagName('td'); //xét từng ô của từng dòng
-        for (var j = 0; j < cells.length; j++) {
-            if (cells[j].innerText.trim() === value.trim()) {
-                return true;
-            }
+        if (cells[0].innerText.trim() == value.trim()) {
+            return true;
         }
     }
 
