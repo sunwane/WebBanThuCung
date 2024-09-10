@@ -46,7 +46,7 @@ document.querySelectorAll('.js-link').forEach((link) => {
     });
 });
 
-console.log(JSON.parse(sessionStorage.getItem('id')));
+//console.log(JSON.parse(sessionStorage.getItem('id')));
 
 //search--------------------------------------------------
 

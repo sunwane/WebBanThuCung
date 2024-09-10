@@ -70,8 +70,8 @@
         mysqli_query($conn, $sql);
     }
 
-    function inforOrder($idDH, $idKH, $pttt, $ngayDat, $ngayGiao, $note, $sum, $trangthai, $conn){
-        $sql = "Insert into donhang value('$idDH', '$idKH', '$pttt', '$ngayDat', '$ngayGiao', '$note', '$sum', '$trangthai')";
+    function inforOrder($idDH, $idKH, $pttt, $ngayDat, $note, $sum, $trangthai, $conn){
+        $sql = "Insert into donhang value('$idDH', '$idKH', '$pttt', '$ngayDat', NULL, '$note', '$sum', '$trangthai')";
         mysqli_query($conn, $sql);
     }
 
