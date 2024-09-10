@@ -57,7 +57,7 @@
         <div class="box2">
             Mọi thắc mắc về lỗi hệ thống xin hãy liên hệ với kỹ thuật viên để được giải quyết
         </div>
-        <a class="box3" href="index.php" target="_top" onclick="logout()">
+        <a class="box3" href="index.php?logout=true" target="_top" onclick="logout()">
             <img src="../images/icons8-power-off-button-24.png" alt="đăng xuất">
             <div>Đăng xuất</div>
         </a>

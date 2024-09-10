@@ -2,6 +2,12 @@
     include "connect.php";
     session_start();
 
+    $logout = isset($_GET['logout']) ? true : '';
+
+    if($logout == true){
+        $_SESSION['loggedin'] = false;
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = isset($_POST['mail']) ? $_POST['mail'] : '';
         $password = isset($_POST['pass']) ? $_POST['pass'] : '';
@@ -19,6 +25,7 @@
                 $_SESSION['idUser'] = $row['MaTaiKhoan'];
                 $_SESSION['password'] = $password;
                 unset($_SESSION['error']);
+                $_SESSION['loggedin'] = true;
     
                 // Chuyển hướng tới trang main.php
                 header('Location: main.php');
@@ -44,7 +51,7 @@
     <form method="POST" action="">
         <img src="../images/logo-xoaphong.png" alt="logo"> <br>
         <div class="input">
-            <input type="text" placeholder="Email" name='mail'> <br>
+            <input type="text" placeholder="Email" name='mail' autocomplete="off"> <br>
             <input type="password" placeholder="Mật khẩu" name='pass'> <br>
             <div class="error">
             <?php
