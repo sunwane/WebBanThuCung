@@ -31,7 +31,7 @@
             while($row = mysqli_fetch_array($result)){
                 if($row['SoDienThoai'] == $phone){
                     $check = false; //khach hang su dung sdt nay da tung mua hang
-                    $idCus = $row['MaKhachHang'];
+                    //$idCus = $row['MaKhachHang'];
                 }
             }
         }
@@ -70,8 +70,8 @@
         mysqli_query($conn, $sql);
     }
 
-    function inforOrder($idDH, $idKH, $pttt, $ngayDat, $ngayGiao, $note, $sum, $trangthai, $conn){
-        $sql = "Insert into donhang value('$idDH', '$idKH', '$pttt', '$ngayDat', '$ngayGiao', '$note', '$sum', '$trangthai')";
+    function inforOrder($idDH, $idKH, $pttt, $ngayDat, $note, $sum, $trangthai, $conn){
+        $sql = "Insert into donhang value('$idDH', '$idKH', '$pttt', '$ngayDat', NULL, '$note', '$sum', '$trangthai')";
         mysqli_query($conn, $sql);
     }
 

@@ -29,7 +29,8 @@
         $idDH = NextID($conn, "donhang", "D", "MaDon");
         $pttt = "Tiền mặt";
         $ngayDat = date("Y") . "-" . date("m") . "-" . date("d");
-        $ngayGiao = date('Y', $date) ."-" . date('m', $date) . "-" . date('d', $date);
+        //$ngayGiao = date('Y', $date) ."-" . date('m', $date) . "-" . date('d', $date);
+        //$ngayGiao = NULL;
         $note = $_POST['note'];
         $sum = $_POST['sum'];
         $trangthai = "Đã đặt hàng";
@@ -39,7 +40,7 @@
         if(!empty($name) && !empty($address1) && !empty($phone) && !empty($email) && !empty($idKH) && !empty($idDH)  && !empty($sum)){
             if($check == true){
                 infoCus($idKH, $name, $phone, $address1, $email, $conn);
-                inforOrder($idDH, $idKH, $pttt, $ngayDat, $ngayGiao, $note, $sum, $trangthai, $conn);
+                inforOrder($idDH, $idKH, $pttt, $ngayDat, $note, $sum, $trangthai, $conn);
                 
                 foreach ($dlBang as $item) {
                     $petName = $item['product'];
@@ -50,10 +51,10 @@
                 }
             }
             else{
-                echo "<script>console.log('std nay da duoc dung de mua 1 lan')</script>";
+                //echo "<script>console.log('std nay da duoc dung de mua 1 lan')</script>";
                 $idCus = getIDCus($conn, $phone);
                 updateCus($idCus, $name, $phone, $address1, $email, $conn);
-                inforOrder($idDH, $idCus, $pttt, $ngayDat, $ngayGiao, $note, $sum, $trangthai, $conn);
+                inforOrder($idDH, $idCus, $pttt, $ngayDat, $note, $sum, $trangthai, $conn);
                 
                 foreach ($dlBang as $item) {
                     $petName = $item['product'];
@@ -198,7 +199,7 @@
             <button class="ship-pay">
                 <a href="">Chính sách vận chuyển và thanh toán</a>
             </button>
-            <p class="hotline">Hot line: 0954865324</p>
+            <p class="hotline">Hotline: 0954865324</p>
         </div>
 
         <div class="info-social">

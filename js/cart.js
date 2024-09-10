@@ -17,8 +17,6 @@ if(!cart){
 }
 
 
-
-
 export function updateQuantity(){
     document.getElementById('quantity_cart').innerHTML = quantity;
 };

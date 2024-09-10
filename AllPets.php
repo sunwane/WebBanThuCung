@@ -43,23 +43,23 @@
     </div>
 
     <div class="tags">
+        <div class="all">
+            <img src="images/icon/hot-sale.png">
+            <a href="AllPets.php">Tất cả</a>
+        </div>
         <div class="dog">
             <img src="images/icon/dog (2).png">
-            <button>Chó</button>   
+            <a href="dogCategory.html">Chó</a>   
         </div>
         <div class="cat">
             <img src="images/icon/black-cat.png">
-            <button>Mèo</button>
+            <a href="catCategory.html">Mèo </a>
         </div>
 
-        <div class="hot">
-            <img src="images/icon/hot-sale.png">
-            <button>Hot</button>
-        </div>
-        <div class="new">
+        <!--<div class="new">
             <img src="images/icon/icons8-new-96.png">
             <button>Mới</button>
-        </div>
+        </div>-->
     </div>
 
     <!--body-->
@@ -95,7 +95,7 @@
             <button class="ship">
                 <a href="">Chính sách vận chuyển và thanh toán</a>
             </button>
-            <p class="hotline">Hot line: 0954865324</p>
+            <p class="hotline">Hotline: 0954865324</p>
         </div>
 
         <div class="info-social">

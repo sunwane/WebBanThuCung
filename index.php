@@ -68,21 +68,21 @@
     <div class="body1">
         <div class="dog">
             <img src="images/design/21.png">
-            <!--<a class="danh-muc-cho" href="danh-muc-cho.html">Chó</a>-->
-            <a>Chó</a>
+            <a class="danh-muc-cho" href="dogCategory.html">Chó</a>
+            <!--<a>Chó</a>-->
         </div>
-        <div class="dog">
+        <div class="cat">
             <img src="images/design/23.png">
-            <a>Mèo</a>
+            <a class="danh-muc-meo" href="catCategory.html">Mèo</a>
         </div>
-        <div class="dog">
+        <!--<div class="dog">
             <img src="images/design/22.png">
             <a>Hot</a>
         </div>
         <div class="dog">
             <img src="images/design/24.png">
             <a>Mới</a>
-        </div>
+        </div>-->
     </div>
 
     <div class="showAll">
@@ -114,7 +114,7 @@
             <button class="ship">
                 <a href="">Chính sách vận chuyển và thanh toán</a>
             </button>
-            <p class="hotline">Hot line: 0954865324</p>
+            <p class="hotline">Hotline: 0954865324</p>
         </div>
 
         <div class="info-social">
