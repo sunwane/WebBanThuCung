@@ -88,7 +88,7 @@
                 </table>
             </div>
             <div class="tfoot">
-                <button id="resetbtn"><a href="?">Reset</a></button>
+                <button id="resetbtn"><a href="?tab=all">Reset</a></button>
                 <button id="addbtn" onclick="openPopup(this)"> + Thêm mới</button>
             </div>
         </div>
@@ -405,7 +405,7 @@
                 </table>
             </div>
             <div class="tfoot">
-                <button id="resetbtn"><a href="?">Reset</a></button>
+                <button id="resetbtn"><a href="?tab=dadat">Reset</a></button>
                 <button id="addbtn" onclick="openPopup(this)"> + Thêm mới</button>
             </div>
         </div>
@@ -469,7 +469,7 @@
                 </table>
             </div>
             <div class="tfoot">
-                <button id="resetbtn" style="margin: 0 20px;"><a href="?">Reset</a></button>
+                <button id="resetbtn" style="margin: 0 20px;"><a href="?tab=daxacnhan">Reset</a></button>
             </div>
         </div>
 
@@ -532,7 +532,7 @@
                 </table>
             </div>
             <div class="tfoot">
-                <button id="resetbtn" style="margin: 0 20px;"><a href="?">Reset</a></button>
+                <button id="resetbtn" style="margin: 0 20px;"><a href="?tab=danggiao">Reset</a></button>
             </div>
         </div>
 
@@ -595,7 +595,7 @@
                 </table>
             </div>
             <div class="tfoot">
-                <button id="resetbtn" style="margin: 0 20px;"><a href="?">Reset</a></button>
+                <button id="resetbtn" style="margin: 0 20px;"><a href="?tab=dagiao">Reset</a></button>
             </div>
         </div>
 
