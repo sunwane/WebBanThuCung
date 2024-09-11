@@ -2,7 +2,6 @@ export let cart = JSON.parse(localStorage.getItem('cart'));
 export let quantity = JSON.parse(localStorage.getItem('quantity'));
 
 
-
 if(!cart){
     cart = [
         {

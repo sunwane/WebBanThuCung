@@ -5,10 +5,10 @@ import { addToCart, cart , formartMoney, updateQuantity } from "./cart.js";
 
 updateQuantity();
 
-const petId = JSON.parse(sessionStorage.getItem('id'));
+const petId = JSON.parse(sessionStorage.getItem('id')); //lấy id đã lưu khi nhấn nút xem ngay
 let matchingPet = [] ;
 
-pets.forEach((pet) => {
+pets.forEach((pet) => { //tìm thú cưng thông qua id
     if(petId === pet.id){
         matchingPet = pet;
     }
@@ -19,12 +19,13 @@ let detailsHTML = '';
 export let spec = [];
 let tableHTML = '';
 
-giong.forEach((giong) => {
+giong.forEach((giong) => { //tìm giống tương ứng với với thú cưng
     if(matchingPet.magiong === giong.magiong){
         spec = giong;
     }
 });
 
+//ghi thông tin của thú cưng lên trang bằng đoạn mã html
 detailsHTML += `<div class="left-body0">
         <img class="img0" src="${matchingPet.img}">
     </div>
@@ -48,6 +49,7 @@ detailsHTML += `<div class="left-body0">
         </div>
     </div>`
 
+//ghi đặc điểm 
 tableHTML += `<caption align="top">Thông tin</caption>
             <tr>
                 <td>Tuổi: ${matchingPet.tuoi}</td>
@@ -65,25 +67,23 @@ tableHTML += `<caption align="top">Thông tin</caption>
 document.querySelector('.body0').innerHTML = detailsHTML;
 document.querySelector('.table-info').innerHTML = tableHTML;
 
-document.querySelectorAll('.add-button').forEach((button) => {
-    button.addEventListener('click', () => {
+document.querySelector('.add-button').addEventListener('click', () => {  //
         let check = true;
-        if(cart){
-            cart.forEach(cartItem => {
-                if(cartItem.id === matchingPet.id){
-                    check = false;
+        if(cart){ //nếu giỏ hàng đã có thú cưng
+            cart.forEach(cartItem => { 
+                if(cartItem.id === matchingPet.id){ //kiểm tra xem thú cưng này đã thêm vào giỏ trước đó chưa
+                    check = false; //đã thêm
                 }
             });
         }
     
-        if(check){
+        if(check){ //true=>chưa thêm => thêm mới vào giỏ hàng
             addToCart(matchingPet, spec.ten);
             updateQuantity();
             document.getElementById('result').innerHTML = 'Thêm thành công';
-        }
+        } //false thì hiện thông báo đã thêm r
         else document.getElementById('result').innerHTML = 'Thú cưng đã có trong giỏ hàng';
-    });
-});
+    })
 
 //search------------------------
 

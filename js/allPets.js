@@ -1,5 +1,5 @@
 import {pets} from './pets.js'
-import { giong } from './species.js'
+import {giong} from './species.js'
 import {updateQuantity, formartMoney} from './cart.js'
 
 updateQuantity();
@@ -9,7 +9,7 @@ let petsHTML = '';
 
 pets.forEach(function(pet){
     let species =[];
-    giong.forEach((giong) => {
+    giong.forEach((giong) => { //tìm giống đúng cho mỗi thú cưng
         if(pet.magiong === giong.magiong){
             species = giong;
         }
@@ -34,23 +34,18 @@ pets.forEach(function(pet){
     `;
 });
 
-document.querySelector('.body0').innerHTML = petsHTML;
+document.querySelector('.body0').innerHTML = petsHTML; //truy xuất đến div body0 và thêm đoạn code html hiển thị tất cả thú cưng
 
-document.querySelectorAll('.js-link').forEach((link) => {
-    link.addEventListener('click', function() {
-        const petId = this.closest('.js-show-detail').dataset.petId;
-        //console.log(petId); // In ra giá trị của petId
-        
-        //localStorage.setItem('id', JSON.stringify(petId));
+document.querySelectorAll('.js-link').forEach((link) => { //chọn tất cả các nút xem ngay của từng sản phẩm với giá trị id khác nhau
+    //querySelectorAll trả về Nodelist
+    link.addEventListener('click', function() { //thêm sự kiện click cho tất cả nút xem ngay
+        const petId = this.closest('.js-show-detail').dataset.petId; // lấy dữ liệu từ thuộc tính data-pet-id
         sessionStorage.setItem('id', JSON.stringify(petId));
     });
 });
 
-//console.log(JSON.parse(sessionStorage.getItem('id')));
 
 //search--------------------------------------------------
-
-//let products = document.querySelector('.products');
 
 let petDisplayHTML = '';
 
@@ -61,17 +56,6 @@ searchInput.addEventListener('click', function(e){
     document.getElementById('pet').style.display = 'block';
 
     pets.forEach(item =>{
-        /*let newProduct = document.createElement('div');
-        newProduct.classList.add('product');
-        newProduct.value = `${item.id}`
-        newProduct.innerHTML = `<img src="${item.img}">
-                                <div class="info">
-                                    <div class="name">${item.name}</div>
-                                    <div class="price">${item.price}</div>
-                                </div>`;
-        
-        products.appendChild(newProduct);*/
-    
         petDisplayHTML += `<a href="PetDetails.html" class='productSearch' data-pet-id = ${item.id}>
                         <div class='product1'>
                             <img src="${item.img}">
@@ -100,15 +84,6 @@ searchInput.addEventListener('input', function(result){
         }
     })
 })
-
-/*document.querySelectorAll('.productSearch').forEach(link => {
-    link.addEventListener('click', function(e){
-        const petId = this.dataset.petId;
-        //console.log(petId);
-
-        sessionStorage.setItem('id', JSON.stringify(petId));
-    })
-})*/
 
 document.getElementById('pet').addEventListener('click', function (e) {
     if (e.target.closest('.productSearch')) {

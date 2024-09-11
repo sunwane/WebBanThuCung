@@ -68,12 +68,12 @@
     <div class="body1">
         <div class="dog">
             <img src="images/design/21.png">
-            <a class="danh-muc-cho" href="dogCategory.html">Chó</a>
+            <a class="danh-muc-cho" href="dogCategory.php">Chó</a>
             <!--<a>Chó</a>-->
         </div>
         <div class="cat">
             <img src="images/design/23.png">
-            <a class="danh-muc-meo" href="catCategory.html">Mèo</a>
+            <a class="danh-muc-meo" href="catCategory.php">Mèo</a>
         </div>
         <!--<div class="dog">
             <img src="images/design/22.png">

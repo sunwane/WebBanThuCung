@@ -4,8 +4,6 @@ import { formartMoney, updateQuantity } from "./cart.js";
 
 updateQuantity();
 
-//console.log(giong);
-
 let petsHTML = '';
 
 function display(){
@@ -44,6 +42,10 @@ function display(){
 
 display();
 
+//có 2 thẻ div chứa 2 nội dung khác nhau
+//div displayAll chứa tất cả sản phẩm là chó
+//div filterDisplay chứa các sản phẩm sau khi lọc
+//2 div này chỉ được xuất hiện 1 trong 2 trong 1 thời điểm
 document.getElementById('filter-button').addEventListener('click', () => {
     document.getElementById('displayAll').style.display = 'none';
     
@@ -60,19 +62,21 @@ document.getElementById('filter-button').addEventListener('click', () => {
         let species = null; // Đặt species thành null ban đầu
 
         // Tìm species khớp với pet.magiong
-        giong.forEach((giongItem) => {
+        giong.forEach((giongItem) => { //tìm giống tương ứng với thú cưng
             if (pet.magiong === giongItem.magiong) {
                 species = giongItem; // Gán species khi tìm thấy
             }
         });
 
-        // Kiểm tra nếu species tồn tại và thuộc loại "Chó"
+        // Kiểm tra nếu thú cưng với các điều kiện lọc có tồn tại và thuộc loại "Chó"
         if (species && species.tenloai === 'Chó') {
             // Xác định điều kiện lọc
             let match = true;
 
             // Kiểm tra từng điều kiện
-            if (kichThuoc !== 'Chọn' && species.kichthuoc_mau !== kichThuoc) {
+            //nếu dữ liệu trong thẻ select khác 'Chọn' và không khớp với kích thước của thú cưng hiện tại
+            //nên sẽ bỏ qua không hiển thị pet này
+            if (kichThuoc !== 'Chọn' && species.kichthuoc_mau !== kichThuoc) { 
                 match = false;
             }
             if (kieuLong !== 'Chọn' && species.kieulong !== kieuLong) {
@@ -85,7 +89,7 @@ document.getElementById('filter-button').addEventListener('click', () => {
                 match = false;
             }
 
-            // Nếu tất cả các điều kiện đều khớp, thêm pet vào kết quả lọc
+            // Nếu tất cả các điều kiện đều khớp (match vẫn là true), thêm pet vào kết quả lọc
             if (match) {
                 filter += `<div class="product">
                                 <img src="${pet.img}">
@@ -111,23 +115,19 @@ document.getElementById('filter-button').addEventListener('click', () => {
     }
 
     // Cập nhật kết quả lọc
-    document.getElementById('filterDisplay').style.display = 'flex'
-    document.getElementById('filterDisplay').innerHTML = filter;
+    document.getElementById('filterDisplay').style.display = 'flex' //hiển thị phần tử div kết quả lọc
+    document.getElementById('filterDisplay').innerHTML = filter //thêm đoạn code html để hiển thị
 });
 
 
-document.getElementById('bo-filter-button').addEventListener('click', function(){
-    document.getElementById('filterDisplay').style.display = 'none'
-    //document.getElementById('filterDisplay').style.margin = '0'
+document.getElementById('bo-filter-button').addEventListener('click', function(){ 
+    document.getElementById('filterDisplay').style.display = 'none' 
     document.getElementById('displayAll').style.display = 'flex'
 })
 
 document.querySelectorAll('.js-link').forEach((link) => {
     link.addEventListener('click', function() {
         const petId = this.closest('.js-show-detail').dataset.petId;
-        //console.log(petId); // In ra giá trị của petId
-        
-        //localStorage.setItem('id', JSON.stringify(petId));
         sessionStorage.setItem('id', JSON.stringify(petId));
     });
 });
@@ -138,22 +138,10 @@ export function search(){
     let searchInput = document.querySelector('.search');
     let div = document.querySelector('.products');
 
-    //document.getElementById('pet').style.display = 'none';
-
     searchInput.addEventListener('click', function(e){
         document.getElementById('pet').style.display = 'block';
 
         pets.forEach(item =>{
-            /*let newProduct = document.createElement('div');
-            newProduct.classList.add('product');
-            newProduct.value = `${item.id}`
-            newProduct.innerHTML = `<img src="${item.img}">
-                                    <div class="info">
-                                        <div class="name">${item.name}</div>
-                                        <div class="price">${item.price}</div>
-                                    </div>`;
-            
-            products.appendChild(newProduct);*/
         
             petHTML += `<a href="PetDetails.html" class='product' data-pet-id = ${item.id}>
                             <div class='product1'>
@@ -171,14 +159,6 @@ export function search(){
         
         document.getElementById('pet').innerHTML = petHTML;
     })
-
-    /*document.querySelectorAll('.product').forEach(link => {
-        link.addEventListener('click', function(e){
-            const petId = this.dataset.petId;
-
-            sessionStorage.setItem('id', JSON.stringify(petId));
-        })
-    });*/
 
 
     document.getElementById('pet').addEventListener('click', function (e) {

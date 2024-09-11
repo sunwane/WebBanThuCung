@@ -56,8 +56,8 @@ document.querySelectorAll('.js-delete-link').forEach((link) => { //mã hóa nút
         const petId = link.dataset.petId; // lấy id trong nút mới click vào gán cho biến productId.
         removeFromCart(petId);
 
-        const container = document.querySelector(`.content1-${petId}`);
-        container.remove();
+        const petDelete = document.querySelector(`.content1-${petId}`);
+        petDelete.remove();
 
         updateSum();
         

@@ -1,3 +1,6 @@
+<?php
+    include "getData.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,11 +56,11 @@
         </div>
         <div class="dog">
             <img src="images/icon/dog (2).png">
-            <a href="dogCategory.html">Chó</a>
+            <a href="dogCategory.php">Chó</a>
         </div>
         <div class="cat">
             <img src="images/icon/black-cat.png">
-            <a href="catCategory.html">Mèo</a>
+            <a href="catCategory.php">Mèo</a>
         </div>
 
         <!--<div class="hot">

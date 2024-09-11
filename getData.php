@@ -1,8 +1,8 @@
 <?php
     include "connect.php";
 
-    $sql = "select * from thucung";
-    $result = mysqli_query($conn, $sql);
+    $sql = "select * from thucung"; //câu lệnh sql
+    $result = mysqli_query($conn, $sql); //thực thi câu lệnh và lưu vào biến
     $array = [];
 
     if(mysqli_num_rows($result) > 0){
@@ -26,10 +26,11 @@
         }
     }
 
-    $jsonArray = json_encode($array);
-    echo "
-    <script>
-        let arrayNew = $jsonArray;
+    $jsonArray = json_encode($array); //Dữ liệu trong mảng $array được chuyển thành chuỗi JSON, chuyển đổi mảng PHP thành chuỗi JSON.
+    //arrayNew kiểu object
+    echo " 
+    <script>                                                       
+        let arrayNew = $jsonArray; 
         sessionStorage.setItem('pet', JSON.stringify(arrayNew));
     </script>
     ";

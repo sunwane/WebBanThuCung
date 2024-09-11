@@ -1,1 +1,1 @@
-export let pets = JSON.parse(sessionStorage.getItem('pet'));
+export let pets = JSON.parse(sessionStorage.getItem('pet')); //chuyển đổi chuỗi JSON thành đối tượng JavaScript lưu dô biến
